@@ -1,5 +1,6 @@
 import { IoLocationSharp } from "react-icons/io5";
 import { MdAttachMoney } from "react-icons/md";
+import { Link } from "react-router-dom";
 
 const Job = ({ job }) => {
   const {
@@ -33,7 +34,9 @@ const Job = ({ job }) => {
           <h2 className=" flex "><MdAttachMoney className="text-xl  " />{salary}</h2>
         </div>
         <div className="card-actions ">
+          <Link to={`/job/${id}`}>
           <button className="btn btn-success">View Details</button>
+          </Link>
         </div>
       </div>
     </div>
