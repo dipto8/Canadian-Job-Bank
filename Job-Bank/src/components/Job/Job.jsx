@@ -14,11 +14,11 @@ const Job = ({ job }) => {
     salary,
   } = job;
   return (
-    <div className="card card-compact bg-base-100  shadow-xl">
+    <div className="card card-compact bg-base-100  shadow-xl p-6">
       <figure>
         <img src={logo} alt="Shoes" />
       </figure>
-      <div className="card-body">
+      <div className="card-body ">
         <h2 className="card-title">{job_title}</h2>
         <p>{company_name}</p>
         <div className="">
