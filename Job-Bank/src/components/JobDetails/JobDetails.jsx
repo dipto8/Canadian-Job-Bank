@@ -1,5 +1,9 @@
 import { useLoaderData, useParams } from "react-router-dom";
 import { MdAttachMoney } from "react-icons/md";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { saveJobApplication } from "../../utility/LocalStorage";
+
 
 
 const JobDetails = () => {
@@ -8,6 +12,11 @@ const JobDetails = () => {
     const idInt = parseInt(id)
     const job = jobs.find(job =>job.id == idInt)
     console.log( job)
+    const handleAppyJob = ()=>{
+        saveJobApplication(idInt);
+        toast.success('Applied Successfully')
+
+    }
     return (
         <div className="p-4 my-4">
             <div className=" w-40  mx-auto my-6">
@@ -40,10 +49,11 @@ const JobDetails = () => {
                     <h2 className="flex font-semibold">Phone: {job.contact_information.address}</h2>
                 </div>
 
-                <button className="btn btn-primary w-full">Apply  now</button>
+                <button onClick={handleAppyJob} className="btn btn-primary w-full">Apply  now</button>
             </div>
 
          </div>
+         <ToastContainer />
             
         </div>
     );
